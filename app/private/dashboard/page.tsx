@@ -1,9 +1,9 @@
 import { getSession } from "@/lib/getSession";
 import { redirect } from "next/navigation";
 
-export default async function Home() {
+export default async function Dashboard() {
   const session = await getSession();
   const user = session?.user;
-
-  return <div>Welcome {user?.name}</div>;
+  if (!user) return redirect("/login");
+  return <div>Dashboard</div>;
 }
