@@ -14,7 +14,7 @@
 
 import mongoose from "mongoose";
 
-const connectDB = async () => {
+const db = async () => {
   if (mongoose.connection.readyState >= 1) {
     return;
   }
@@ -30,4 +30,4 @@ const connectDB = async () => {
   }
 };
 
-export default connectDB;
+export default db;
